@@ -1,0 +1,21 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 袖珍简化字拼音自定义词语
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 编辑完后重新部署才会生效
+# 「...」以下不能添加备注内容
+
+---
+name: pinyin_simp_custom
+version: "0.1"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+斯国一	siguoyi

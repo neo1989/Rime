@@ -1,0 +1,56 @@
+# Rime
+# encoding: utf-8
+#
+# 袖珍简化字拼音自定义配置
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 编辑完后重新部署才会生效
+
+patch:
+# 语言模型数据包
+#  __include: grammar:/hans
+# 修改切换时提示
+  "schema/name": "简体中文"
+# 设置主词典
+  "translator/dictionary": pinyin_simp
+# 候选去重
+  engine/filters:
+    - uniquifier
+# 默认输入状态为中文
+  "switches/@0/reset": 0
+# 开启拼音纠错
+  translator/enable_correction: false
+# 固定候选单字，在用户目录下创建 custom_phrase.txt 文件并编辑
+  "engine/translators/@next": table_translator@custom_phrase
+  custom_phrase:
+    dictionary: ""
+    user_dict: custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 1
+  punctuator:
+    import_preset: default
+    half_shape:
+      '`': '`'
+      '@': '@'
+      '#': '#'
+      '%': '%'
+      '=': '='
+      '/': '/'
+      '\': '、'
+      '~': '~'
+    full_shape:
+      '`': '`'
+      '@': '@'
+      '#': '#'
+      '%': '%'
+      '=': '='
+      '/': '/'
+      '\': '、'
+# 释放「`」键（同时关闭反查）
+  "recognizer/patterns/reverse_lookup": {}
